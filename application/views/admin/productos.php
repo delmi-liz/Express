@@ -70,7 +70,11 @@
                     </ul>
                     <ul class="nav navbar-top-links pull-right">
 
-                      
+                        <li class="hidden-xs" id="toggleFullscreen">
+                            <a class="fa fa-expand" data-toggle="fullscreen" href="#" role="button">
+                                <span class="sr-only">Toggle fullscreen</span>
+                            </a>
+                        </li>
 
                         <li id="dropdown-user" class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
@@ -142,11 +146,10 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Nombre producto</th>
                                                 <th>Descripción producto</th>
                                                 <th>Existencia del producto</th>
-                                                 <th>Precio</th>
-                                                 <th>Nombre</th>
-                                                 <th>Imagen</th>
+                                                <th>Precio</th>
                                                 <th>Usuario Agregó</th>
                                                 <th>Fecha Ingreso</th>
                                                 <th>IP Ingreso</th>
@@ -165,11 +168,10 @@
                                             <tr>
                                                 <!-- Llamado de campos de los datos que queremos mostrar  -->
                                                 <td><?= $producto->idProductos ?></td>
+                                                <td><?= $producto->nombre ?></td>
                                                 <td><?= $producto->descripcionProducto ?></td>
                                                 <td><?= $producto->ExitenciaProducto  ?></td>
-                                                <td><?= $producto->Precio  ?></td>
-                                                <td><?= $producto->Nombre  ?></td>
-                                                <td><?= $imagen->Imagen  ?></td>
+                                                <td><?= $producto->precio  ?></td>
                                                 <td><?= $producto->usuarioIngreso  ?></td>
                                                 <td><?= $producto->fechaIngreso  ?></td>
                                                 <td><?= $producto->ipIngreso  ?></td>
@@ -468,9 +470,9 @@
                     </ul>
                 </div>
 
-          
+               
 
-                <p class="pad-lft">&#0169; Rapitrans</p>
+                <p class="pad-lft">&#0169; RAPITRANS</p>
             </footer>
 
             <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>

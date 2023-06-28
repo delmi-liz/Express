@@ -120,7 +120,11 @@
                     </ul>
                     <ul class="nav navbar-top-links pull-right">
 
-                        
+                        <li class="hidden-xs" id="toggleFullscreen">
+                            <a class="fa fa-expand" data-toggle="fullscreen" href="#" role="button">
+                                <span class="sr-only">Toggle fullscreen</span>
+                            </a>
+                        </li>
 
                         <li id="dropdown-user" class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
@@ -165,7 +169,7 @@
 
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Nuevo producto</h3>
+                                    <h3 class="panel-title">Datos del nuevo producto</h3>
                                 </div>
 
                                 <div class="panel">
@@ -184,47 +188,49 @@
                                                     </div>";
                                               } ?>
 
-                                            <!--Formulario que sirve para poder realizar la filtracion por regiones de un producto-->
+                                            <!--Formulario que sirve para poder realizar la filtracion por regiones de un nuevo usuario-->
                                             <form id="formulario" name="formulario" class="form-horizontal"
-                                                action="guardar" method="GET" enctype="multipart/form-data" onsubmit="return confirmar()">
+                                                action="guardar" method="GET" onsubmit="return confirmar()">
+
+
                                                 <br>
                                                 <div class="form-group">
+
+                                                  <label class="col-md-1 col-xs-12 control-label">Nombre</label>
+                                                     <div class="col-md-2 col-xs-12">
+                                                        <input type="text" class="form-control" name="nombre" id="nombre"
+                                                            placeholder="Ingrese un nombre" required />
+                                                    </div>
+
+
                                                     <label class="col-md-1 col-xs-12 control-label">Descripción</label>
-                                                    <div class="col-md-3 col-xs-12">
-                                                        <input type="text" class="form-control" name="descripcion" id="descripcion"
+                                                    <div class="col-md-2 col-xs-12">
+                                                        <input type="text" class="form-control" name="descripcionProducto" id="descripcionProducto"
                                                             placeholder="Ingrese una descripción" required />
                                                     </div>
+
                                                     <label class="col-md-1 col-xs-12 control-label">Existencia</label>
-                                                    <div class="col-md-3 col-xs-12">
-                                                        <input type="text" class="form-control" name="existencia" id="existencia" 
-                                                        placeholder="Ingrese existencia" required />
-                                                               </div>
-
-                                                       
-                                                    <div class="form-group">
-                                                    <label class="col-md-1 col-xs-12 control-label">Precio</label>
-                                                    <div class="col-md-3 col-xs-12">
-                                                        <input type="text" class="form-control" name="Precio" id="Precio"
-                                                            placeholder="Ingrese Precio" required />
-                                                    </div>
-                                                        <div class="form-group">
-                                                    <label class="col-md-3 col-xs-12
-                                                     control-label"></label>
-
-                                                <div class="form-group">
-                                                    <label class="col-md-3 col-xs-12 control-label">Nombre</label>
                                                     <div class="col-md-2 col-xs-12">
-                                                        <input type="text" class="form-control" name="nombre" id="nombre"
-                                                            placeholder="Ingrese Nombre" required />
+                                                        <input type="text" class="form-control" name="ExistenciaProducto"
+                                                            id="ExistenciaProducto" placeholder="Ingrese ExistenciaProducto" required />
+                                                    </div>
+
+                                                
+                                                  
+                                                     <label class="col-md-1 col-xs-12 control-label">Precio</label>
+                                                     <div class="col-md-2 col-xs-12">
+                                                        <input type="text" class="form-control" name="precio" id="precio"
+                                                            placeholder="Ingrese precio" required />
                                                     </div>
 
 
-                                                     <label class="col-md-3 col-xs-12 control-label">Imagen</label>
-                                                     <input type="file" name="imagen" id="imagen">
-                                                          
-
-
-                                                        <div class="col-md-10 col-xs-14">
+                                                  
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="panel-footer">
+                                                    <div class="form-group">
+                                                        <div class="col-md-5 col-xs-12">
                                                             <!--  Boton guardar, y guardar los datos y mandar los datos a modificar ingresados al controlador -->
                                                             <input type="submit" class="btn btn-primary" name="btnSend"
                                                                 value="Guardar" id="btnSend">
@@ -234,16 +240,13 @@
                                                                 type="button" class="btn btn-danger"
                                                                 onclick="limpiarFormulario()">Cancelar</a>
                                                         </div>
-                                                                                                 
+                                                    </div>
+                                                </div>
                                             </form>
 
 
 
-
-
-
-
-                                        </div>
+                                      </div>
                                     </div>
                                 </div>
 
@@ -523,9 +526,9 @@
                     </ul>
                 </div>
 
-          
+           
 
-                <p class="pad-lft">&#0169; Rapitrans</p>
+                <p class="pad-lft">&#0169; RAPITRANS</p>
             </footer>
 
             <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>

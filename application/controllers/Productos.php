@@ -93,25 +93,23 @@ class Productos extends CI_Controller
         $this->load->model('model_productos');
 
         // Estas variables vienen de las vista nuevoasusu, las letras verdes son los datos quue viene de la vista y las variables CON el signo $ son para declarar las nuevas variables donde mandaras los datos a tu consulta
-        $descripcion = trim($_REQUEST["descripcion"]);
-        $existencia = trim($_REQUEST["existencia"]);
-        $precio= trim($_REQUEST["precio"]);
-        $nombre= trim($_REQUEST["nombre"]);
-        $imagen=trim($_REQUEST)["imagen"]);
+         $nombre = trim($_REQUEST["nombre"]);
+        $descripcionProducto = trim($_REQUEST["descripcionProducto"]);
+        $ExistenciaProducto = trim($_REQUEST["ExistenciaProducto"]);
+        $precio = trim($_REQUEST["precio"]);
         $usuarioAdiciono = $_SESSION["nombre"];
-
         $ip= $this->ip();
         $fecha = date('d-m-Y H:i:s');
         // si se cumple la funicón para poder guardar los datos, mandamos los respectivos  datos
         if (empty($usuario)) {
-            $data["guardar"] = $this->model_productos->guardarProductos($descripcion, $existencia, $precio, $nombre, $imagen, $usuarioAdiciono, $ip, $fecha);
+            $data["guardar"] = $this->model_productos->guardarProductos($nombre, $descripcionProducto, $ExistenciaProducto, $precio, $usuarioAdiciono, $ip, $fecha);
             // El header es para poder decirle que si se ejecuta lo anterior cambia la url y le agrega la variable respose 1 que
             // es el mensaje de exito que se insertaron los datos
-            header("Location: http://127.0.0.1:8888/Express/index.php/productos/nuevo?response=1");
+            header("Location: http://127.0.0.1:8888/RapiTrans/index.php/productos/nuevo?response=1");
             die();
         } else {
 
-            header("Location: http://127.0.0.1:8888/Express/index.php/productos/nuevo");
+            header("Location: http://127.0.0.1:8888/RapiTrans/index.php/productos/nuevo");
             die();
         }
     }

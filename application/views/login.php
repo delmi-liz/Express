@@ -15,6 +15,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<img class="wave" src="<?php echo base_url(); ?>assets/img/wave.png">
 	<div class="container">
 		<div class="img">
+        <div class="img">
+      <img src="<?php echo base_url(); ?>assets/img/RAPI_TRANS1.2.png" > 
+    </div>
 		
 		</div>
 		<div class="login-content">
@@ -22,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<form method="get">
 
 				<img src="<?php echo base_url(); ?>assets/img/user.png">
-				<h2 class="title">Bienvenidossss</h2>
+				<h2 class="title">Bienvenidos</h2>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>

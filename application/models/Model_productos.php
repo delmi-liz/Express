@@ -1,7 +1,7 @@
 <?php
 class Model_Productos extends CI_Model
 {
-    public function guardarProductos($descripcion, $existencia,  $precio, $nombre, $imagen, $usuarioAdiciono, $ip, $fecha)
+    public function guardarProductos($nombre, $descripcionProducto, $ExistenciaProducto, $precio, $usuarioAdiciono, $ip, $fecha)
     {
 
         $this->load->database();
@@ -9,23 +9,20 @@ class Model_Productos extends CI_Model
         $query = $this->db->query("
       
         insert into RpCatProductos(
+         nombre,
          descripcionProducto,
          ExitenciaProducto,
-         Precio,
-         Nombre,
-         Imagen,
+         precio,
          usuarioIngreso,
          fechaIngreso,
          idEstados,
          ipIngreso
          )values(
-          '" . $descripcion . "',
-          '" . $existencia . "',
-          '" . $precio . "',
-          '" . $nombre . "',
-          '" . $imagen . "',
-          '" . $usuarioAdiciono . "',
-
+           '" . $nombre . "',
+           '" . $descripcionProducto . "',
+           '" . $ExitenciaProducto . "',
+           '" . $precio . "',
+           '" . $usuarioAdiciono . "',
            STR_TO_DATE('" . $fecha . "', '%d-%m-%Y %H:%i:%s'),
            1,
            '" . $ip . "'
@@ -39,7 +36,8 @@ class Model_Productos extends CI_Model
         $this->load->database();
         $query = $this->db->query("
     
-        select prod.idProductos, prod.descripcionProducto, prod.ExitenciaProducto, prod.Precio, prod.Nombre, prod.imagen, prod.usuarioIngreso, prod.fechaIngreso, prod.ipIngreso, est.Nombrestado
+        select prod.idProductos, prod.nombre, prod.descripcionProducto, prod.ExitenciaProducto, 
+        prod.precio, prod.usuarioIngreso, prod.fechaIngreso, prod.ipIngreso, est.Nombrestado
         from RpCatProductos as prod 
         inner join Estados est    
         where est.Nombrestado = 'Activo'
@@ -48,3 +46,4 @@ class Model_Productos extends CI_Model
         return $query->result();
     }
 }
+
